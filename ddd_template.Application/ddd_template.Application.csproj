@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Servicecs\" />
+    <Folder Include="Requests\" />
+    <Folder Include="Responses\" />
+    <Folder Include="Requests\Customers\" />
+    <Folder Include="Responses\Customers\" />
+    <Folder Include="Responses\Accounts\" />
+    <Folder Include="Requests\Accounts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ddd_template.Domain\ddd_template.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="10.1.1" />
+  </ItemGroup>
+</Project>

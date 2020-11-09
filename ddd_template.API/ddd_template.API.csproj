@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\ddd_template.Application\ddd_template.Application.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\ddd_template.Infrastructure\ddd_template.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="autofac" Version="6.0.0" />
+    <PackageReference Include="autofac.extensions.dependencyinjection" Version="7.1.0" />
+  </ItemGroup>
+</Project>
