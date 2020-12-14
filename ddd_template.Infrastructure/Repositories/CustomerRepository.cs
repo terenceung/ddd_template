@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using ddd_template.Domain.Customers;
-using ddd_template.Domain.Customers.Repositories;
 
 namespace ddd_template.Infrastructure.Repositories
 {
@@ -14,20 +13,8 @@ namespace ddd_template.Infrastructure.Repositories
         {
             customers = new List<Customer>();
 
-
-            customers.Add(new Customer.Builder()
-                .SetId(1)
-                .SetLogin("terence", "123")
-                .SetName("Terence", "Ung")
-                .Locate(new Address("Macau", "macau", "macau"))
-                .Build());
-
-            customers.Add(new Customer.Builder()
-                .SetId(2)
-                .SetLogin("mary", "123")
-                .SetName("Mary", "BB")
-                .Locate(new Address("zz", "zz", "zz"))
-                .Build());
+            customers.Add(new Customer(1, "terence", "123", "Terence", "Ung", "terenceung@test.com", new Address("a", "a", "a")));
+            customers.Add(new Customer(2, "peter", "123", "Peter", "ABC", "peterabc@test.com", new Address("a", "a", "a")));
         }
 
         public void CreateCustomer(Customer customer)

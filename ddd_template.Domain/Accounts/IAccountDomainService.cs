@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ddd_template.Domain.Accounts.Services
+namespace ddd_template.Domain.Accounts
 {
     public interface IAccountDomainService
     {

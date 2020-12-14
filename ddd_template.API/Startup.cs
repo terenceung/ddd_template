@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
-using ddd_template.Application.Servicecs;
+using ddd_template.Domain.Accounts;
 using ddd_template.Domain.Accounts.Repositories;
-using ddd_template.Domain.Accounts.Services;
-using ddd_template.Domain.Customers.Repositories;
-using ddd_template.Domain.Customers.Services;
+using ddd_template.Domain.Customers;
 using ddd_template.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -80,10 +78,6 @@ namespace ddd_template.API
             //transient: unique instance is created each time is required
 
             //autofac has many more scopes, concept is the same
-
-            //application
-            builder.RegisterType<CustomerApplicationService>().As<ICustomerApplicationService>().InstancePerLifetimeScope();
-            builder.RegisterType<AccountApplicationService>().As<IAccountApplicationService>().InstancePerLifetimeScope();
 
             //domain
             builder.RegisterType<CustomerDomainService>().As<ICustomerDomainService>().InstancePerLifetimeScope();

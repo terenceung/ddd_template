@@ -6,11 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Customers\" />
-    <Folder Include="Customers\Services\" />
-    <Folder Include="Customers\Repositories\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Accounts\" />
-    <Folder Include="Accounts\Repositories\" />
-    <Folder Include="Accounts\Services\" />
   </ItemGroup>
 </Project>

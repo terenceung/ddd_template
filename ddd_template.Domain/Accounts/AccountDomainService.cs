@@ -1,8 +1,7 @@
 ﻿using System;
 using ddd_template.Domain.Accounts.Repositories;
-using ddd_template.Domain.Customers.Services;
 
-namespace ddd_template.Domain.Accounts.Services
+namespace ddd_template.Domain.Accounts
 {
     public class AccountDomainService : IAccountDomainService
     {

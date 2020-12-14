@@ -15,5 +15,6 @@ namespace ddd_template.Application.Servicecs
         BaseResponse<CreateCustomerResponse> CreateCustomer(CreateCustomerRequest request);
         BaseResponse<UpdateCustomerResponse> UpdateCustomer(UpdateCustomerRequest request);
         BaseResponse<CustomerResponse> GetCustomerById(long id);
+        BaseResponse<CustomerCheckSameAddressResponse> CheckIfCustomerHasSameAddress(CustomerCheckSameAddressRequest request);
     }
 }

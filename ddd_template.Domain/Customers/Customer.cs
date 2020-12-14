@@ -8,66 +8,67 @@ namespace ddd_template.Domain.Customers
     {
         public long Id { get; private set; }
         public string Username { get; private set; }
-        public string Password { get; private set; }
+        private string Password { get; set; }
         public string Firstname { get; private set; }
         public string Surname { get; private set; }
         public string Email { get; private set; }
         public Address Address { get; private set; }
 
-        private Customer() { }
+        public Customer() { }
+
+        // for simplicity I use normal constructor to control the creation of customer object
+        // if many parameters are required to create an object, consider using factory/builder pattern
+        public Customer(long id, string username, string password, string firstname, string surname, string email, Address address)
+        {
+            Id = id;
+            Username = username;
+            Password = password;
+            Firstname = firstname;
+            Surname = surname;
+            Email = email;
+            Address = address;
+        }
+
+        public Customer(string username, string password, string firstname, string surname, string email, Address address)
+            : this(0, username, password, firstname, surname, email, address)
+        {
+        }
 
         public void MoveTo(Address address)
         {
             Address = address;
         }
 
-        /// <summary>
-        /// for many variables/properties, can use builder patterns
-        /// </summary>
-        public class Builder
+        public override bool Equals(object obj)
         {
-            private Customer customer;
+            return obj is Customer customer &&
+                   Id == customer.Id;
+        }
 
-            public Builder() {
-                customer = new Customer();
-            }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
 
-            public Builder SetId(long id)
+        public static bool operator == (Customer a, Customer b)
+        {
+            if(a == null || b == null)
             {
-                customer.Id = id;
-                return this;
+                return false;
             }
 
-            public Builder SetLogin(string username, string password)
-            {
-                customer.Username = username;
-                customer.Password = password;
-                return this;
-            }
+            return a.Id == b.Id;
+        }
 
-            public Builder SetName(string firstname, string surname)
-            {
-                customer.Firstname = firstname;
-                customer.Surname = surname;
-                return this;
-            }
+        public static bool operator != (Customer a, Customer b)
+        {
+            return !(a == b);
+        }
 
-            public Builder Email(string email)
-            {
-                customer.Email = email;
-                return this;
-            }
-
-            public Builder Locate(Address address)
-            {
-                customer.Address = address;
-                return this;
-            }
-
-            public Customer Build()
-            {
-                return customer;
-            }
+        //this method does not require other aggregate root, therefore it is not belong to domain service
+        public bool IsLiveTogether(Customer customer)
+        {
+            return Address == customer.Address;
         }
     }
 }

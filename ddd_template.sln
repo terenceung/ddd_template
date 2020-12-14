@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ddd_template.API", "ddd_template.API\ddd_template.API.csproj", "{050F2B53-56D3-43BC-ACF2-70A83B6F78A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ddd_template.Application", "ddd_template.Application\ddd_template.Application.csproj", "{CEA6629C-10C5-4531-8AD2-BCE571F54EEF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ddd_template.Domain", "ddd_template.Domain\ddd_template.Domain.csproj", "{5910016B-AF95-4B22-B685-BE1AC5A12552}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ddd_template.Infrastructure", "ddd_template.Infrastructure\ddd_template.Infrastructure.csproj", "{E1A29FFD-E7D2-4E9C-97EF-F0659772118B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31D810D6-6427-4E43-9AB3-E6EBAB2607DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		{050F2B53-56D3-43BC-ACF2-70A83B6F78A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{050F2B53-56D3-43BC-ACF2-70A83B6F78A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{050F2B53-56D3-43BC-ACF2-70A83B6F78A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEA6629C-10C5-4531-8AD2-BCE571F54EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEA6629C-10C5-4531-8AD2-BCE571F54EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEA6629C-10C5-4531-8AD2-BCE571F54EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEA6629C-10C5-4531-8AD2-BCE571F54EEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5910016B-AF95-4B22-B685-BE1AC5A12552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5910016B-AF95-4B22-B685-BE1AC5A12552}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5910016B-AF95-4B22-B685-BE1AC5A12552}.Release|Any CPU.ActiveCfg = Release|Any CPU

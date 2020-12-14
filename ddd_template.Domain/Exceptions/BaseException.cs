@@ -1,13 +1,13 @@
 ﻿using System;
 namespace ddd_template.Domain.Exceptions
 {
-    public class BaseException : Exception
+    public abstract class BaseException : Exception
     {
         public ErrorCode ErrorCode { get; private set; }
 
-        public BaseException(ErrorCode error, string message = null) : base(message)
+        public BaseException(ErrorCode error, string message = null, Exception e = null) : base(message, e)
         {
-            this.ErrorCode = error;
+            ErrorCode = error;
         }
     }
 }

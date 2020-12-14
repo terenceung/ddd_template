@@ -15,19 +15,11 @@ namespace ddd_template.Infrastructure.Repositories
         {
             accounts = new List<Account>();
 
-            var c1 = new Customer.Builder()
-                .SetId(1)
-                .SetLogin("terence", "123")
-                .SetName("Terence", "Ung")
-                .Locate(new Address("Macau", "macau", "macau"))
-                .Build();
+            var address = new Address("a", "a", "a");
 
-            var c2 = new Customer.Builder()
-                .SetId(1)
-                .SetLogin("terence", "123")
-                .SetName("Terence", "Ung")
-                .Locate(new Address("Macau", "macau", "macau"))
-                .Build();
+            var c1 = new Customer(1, "terence", "123", "Terence", "Ung", "terenceung@test.com", address);
+
+            var c2 = new Customer(2, "peter", "123", "peter", "abc", "peter@test.com", address);
 
             accounts.Add(new Account(1, c1, 100));
             accounts.Add(new Account(2, c2, 50));

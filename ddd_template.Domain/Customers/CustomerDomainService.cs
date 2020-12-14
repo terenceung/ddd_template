@@ -1,7 +1,6 @@
 ﻿using System;
-using ddd_template.Domain.Customers.Repositories;
 
-namespace ddd_template.Domain.Customers.Services
+namespace ddd_template.Domain.Customers
 {
     public class CustomerDomainService : ICustomerDomainService
     {

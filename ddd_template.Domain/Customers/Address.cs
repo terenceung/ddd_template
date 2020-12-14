@@ -19,5 +19,40 @@ namespace ddd_template.Domain.Customers
             Street = street;
             Building = building;
         }
+
+        public static bool operator == (Address a, Address b)
+        {
+            if(a == null || b == null)
+            {
+                return false;
+            }
+
+            if(a.City == b.City
+                && a.Street == b.Street
+                && a.Building == b.Building)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool operator != (Address a, Address b)
+        {
+            return !(a == b);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Address address &&
+                   City == address.City &&
+                   Street == address.Street &&
+                   Building == address.Building;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(City, Street, Building);
+        }
     }
 }

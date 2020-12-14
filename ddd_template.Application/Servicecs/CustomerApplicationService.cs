@@ -17,6 +17,27 @@ namespace ddd_template.Application.Servicecs
             _customerDomainService = customerDomainService;
         }
 
+        public BaseResponse<CustomerCheckSameAddressResponse> CheckIfCustomerHasSameAddress(CustomerCheckSameAddressRequest request)
+        {
+            var response = new BaseResponse<CustomerCheckSameAddressResponse>();
+            var data = new CustomerCheckSameAddressResponse();
+
+            var customerA = _customerDomainService.GetCustomerById(request.customerAId);
+            var customerB = _customerDomainService.GetCustomerById(request.customerBId);
+
+            data.isSame = customerA.IsLiveTogether(customerB);
+            data.customerACity = customerA.Address.City;
+            data.customerABuilding = customerA.Address.Building;
+            data.customerAStreet = customerA.Address.Street;
+            data.customerBCity = customerB.Address.City;
+            data.customerBBuilding = customerB.Address.Building;
+            data.customerBStreet = customerB.Address.Street;
+
+            response.SetData(data);
+
+            return response;
+        }
+
         public BaseResponse<CreateCustomerResponse> CreateCustomer(CreateCustomerRequest request)
         {
             var response = new BaseResponse<CreateCustomerResponse>();
@@ -31,12 +52,7 @@ namespace ddd_template.Application.Servicecs
 
                 var address = new Address(request.city, request.street, request.building);
 
-                var customerBuilder = new Customer.Builder();
-                var customer = customerBuilder
-                    .SetLogin(request.username, request.password)
-                    .SetName(request.firstname, request.surname)
-                    .Locate(address)
-                    .Build();
+                var customerBuilder = new Customer(request.username, request.password, request.firstname, request.surname, request.email, address);
 
                 _customerDomainService.CreateCustomer(customer);
 
